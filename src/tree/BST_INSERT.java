@@ -1,5 +1,6 @@
 package tree;
-
+import java.util.*;
+import java.io.*;
 public class BST_INSERT {
 	static class Node{
 		int data;
@@ -28,13 +29,57 @@ public class BST_INSERT {
 		return root;
 		
 	}
+	//inorder treavesen(left-data-right)
 	static void inorder(Node root) {
 		if(root==null) 
 			return;
 		
-			System.out.println(root.data+" ");
+			
 			inorder(root.left);
+			System.out.println(root.data+" ");
 			inorder(root.right);
+		
+	}
+	//preorder treavesel(data-lift-right)
+	static void preorder(Node root) {
+		if(root==null) 
+			return;
+		
+		
+		System.out.println(root.data+" ");	
+			preorder(root.left);
+			
+			preorder(root.right);
+		
+	}
+	
+	//postorder travesel(lift-right-data)
+	static void postorder(Node root) {
+		if(root==null) 
+			return;
+		
+		
+			
+			postorder(root.left);
+			
+			postorder(root.right);
+			System.out.println(root.data+" ");
+		
+	}
+	
+	//search function in BST
+	static int search(Node root,int data) {
+		if(root==null) {
+			return -1;
+		}
+		if(root.data==data)return 1;
+		if(root.data>data) {
+			return search(root.left,data);
+		}
+		else if(root.data<data){
+			return search(root.right,data);
+		}
+		return -1;
 		
 	}
 
@@ -46,6 +91,11 @@ public class BST_INSERT {
 		root=insert(root,45);
 		root=insert(root,100);
 		inorder(root);
+		preorder(root);
+		postorder(root);
+		int a=search(root,45);
+		System.out.println(a);
+		
 		
 		
 
