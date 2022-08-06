@@ -31,7 +31,7 @@ public class maxfec_INarray {
 	     return max;
 	    }
 	    public static void main(String[] args){
-	        int arr[]={2,4,5,5,5,4,4,4,4,4,4,5,5,5,5,5,5};
+	        int arr[]={1,1,1,1,1,1,1,1,4,5,4,7};
 	        int a=maxfec(arr);
 	        System.out.print(a);
 	        
